@@ -1,0 +1,64 @@
+{
+  "experiment": "C04",
+  "version": 1,
+  "description": "V2 features (name relation, number relation, cross-record twins, word priors) + 8x training sample, on Codex B01 candidates/split",
+  "run_dir": "matcher/runs/c04_v1",
+  "codex_candidates": "retrieval/runs/b01_v1/matcher_v1/candidates",
+  "codex_features": "retrieval/runs/b01_v1/matcher_v1/features",
+  "codex_prepared": "retrieval/runs/b01_v1/prepared",
+  "countries": [
+    "India",
+    "US"
+  ],
+  "validation_fold": 0,
+  "seed": 20260925,
+  "name_weight": 0.5,
+  "training_query_modulus": 8,
+  "train_negative_top_k": 6,
+  "train_extra_negative_permille": 100,
+  "prior_smoothing": 50,
+  "prior_min_count": 20,
+  "cpu_threads": 20,
+  "trees": 1000,
+  "checkpoint_trees": 100,
+  "learning_rate": 0.05,
+  "num_leaves": 63,
+  "min_data_in_leaf": 200,
+  "lambda_l2": 10.0,
+  "min_sum_hessian_in_leaf": 5.0,
+  "max_delta_step": 2.0,
+  "feature_fraction": 0.9,
+  "max_bin": 255,
+  "distractor_fp_weight": 1.9,
+  "b01_check": {
+    "India": 0.967288783,
+    "US": 0.975416284
+  },
+  "smoke": {
+    "run_dir": "matcher/runs/c04_smoke",
+    "limit_parts": 3,
+    "trees": 30,
+    "checkpoint_trees": 10,
+    "test_limit_parts": 3
+  },
+  "test": {
+    "codex_test_candidates": "retrieval/runs/b01_v1/test_stable_v1/candidates",
+    "codex_test_prepared": "retrieval/runs/b01_v1/prepared",
+    "codex_b01_matching": "retrieval/runs/b01_v1/test_stable_v1/output/matching_results.tsv",
+    "raw_test_source1": "matcher/eda/pq/test_source1.parquet",
+    "official_validator": "student_resource/utils/validate_submission.py",
+    "test_dir": "student_resource/dataset/test",
+    "countries": [
+      "France",
+      "India",
+      "US"
+    ],
+    "prior_countries_for_unseen": [
+      "India",
+      "US"
+    ],
+    "workers": 6,
+    "threads_per_worker": 2,
+    "query_row_group": 50000
+  }
+}
