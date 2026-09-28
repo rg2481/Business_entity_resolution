@@ -1,0 +1,20 @@
+# competition data and official kit (not redistributable) - place it locally, see README
+student_resource/
+# generated data, runs, models, caches, logs and outputs
+retrieval/data/
+retrieval/runs/
+retrieval/results/
+retrieval/tmp/
+retrieval/cache/
+matcher/runs/
+matcher/tmp/
+matcher/cache/
+matcher/pylib/
+matcher/eda/
+logs/
+output/
+progress.txt
+.venv/
+retrieval/.venv/
+__pycache__/
+*.pyc

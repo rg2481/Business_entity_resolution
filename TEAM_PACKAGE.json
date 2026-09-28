@@ -1,0 +1,5 @@
+{
+  "purpose": "Marker required by retrieval/scripts/b01_bootstrap_raw.py: it only bootstraps inside this project folder.",
+  "launcher": "run.sh",
+  "readme": "README.md"
+}
